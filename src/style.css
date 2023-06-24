@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Agonia";
+    font-style: normal;
+    src: local("Agonia"), url(./assets/fonts/AgoniaLyubviRegular.woff) format("truetype");
+}
+@font-face {
+    font-family: "Futura";
+    font-style: normal;
+    src: local("Futura"), url(./assets/fonts/Futura.woff) format("truetype");
+}
+@font-face {
+    font-family: "Playfair";
+    font-style: normal;
+    src: local("Playfair"), url(./assets/fonts/Playfair.ttf) format("truetype");
+}
+@font-face {
+    font-family: "Trajan";
+    font-style: normal;
+    src: local("Trajan"), url(./assets/fonts/Trajan.woff) format("truetype");
+}
+
+@layer base {
+    html {
+        font-family: Futura, system-ui, sans-serif;
+        font-size: 1.3em;
+        background-color: #faf8f5;
+    }
+}
