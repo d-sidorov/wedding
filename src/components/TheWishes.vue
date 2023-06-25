@@ -1,0 +1,19 @@
+<template>
+  <section class="px-4 flex flex-col items-center">
+    <p class="font-agonia text-lg py-4">Пожелания</p>
+    <p class="text-center">
+      Главное для нас - Ваше внимание, а радость доставит любой подарок в
+      конверте!
+    </p>
+
+    <p class="py-2">~~~</p>
+
+    <p class="text-center">
+      Мы знаем, что на свадьбах принято дарить цветы, но мы не успеем
+      насладиться их красотой до отъезда в свадебное путешествие. Вместо букета,
+      мы будем рады бутылочке красного вина или что-нибудь для домашнего уюта.
+    </p>
+
+    <img src="flowers.png" class="h-40 rotate-45 my-3" />
+  </section>
+</template>

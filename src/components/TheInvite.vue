@@ -1,5 +1,5 @@
 <script setup>
-import TheButton from "./UI/TheButton.vue";
+import MyButton from "./UI/Button.vue";
 import InviteCeremony from "./Invite/InviteCeremony.vue";
 import InviteParty from "./Invite/InviteParty.vue";
 import { ref, computed } from "vue";
@@ -17,8 +17,45 @@ const buttons = [
     invite: INVITE_PARTY,
   },
 ];
+const inviteParams = {
+  [INVITE_CEREMONY]: {
+    date: "9 сентября 2023",
+    location: "ЗАГС (янтарный зал)",
+    address: "ул. Малыгина, 85",
+    mapId: "3A458c79962881e561cd5ed875fc22df0af7309a62f85e06d75ea075aee2477c02",
+    image: "zags.jpg",
+    dresses: [
+      {
+        image: "man.png",
+        text: "Мужчины: Классические костюмы",
+      },
+      {
+        image: "woman.png",
+        text: "Девушки: Вечерние наряды",
+      },
+    ],
+  },
+  [INVITE_PARTY]: {
+    date: "11 сентября 2023",
+    location: "Zima&Leto Park",
+    address: "д. Падерина. ул. Хвойная, 10",
+    mapId: "3A85adfee5d679e26a77587f1f93013f663c5bcbd44db5b3e852e2fcbaaeff7b79",
+    image: "house.jpg",
+    dresses: [
+      {
+        image: "free_style.png",
+        text: "Свободный стиль одежды",
+      },
+      {
+        image: "bath.png",
+        text: "Банные принадлежности",
+      },
+    ],
+  },
+};
 
 const selectedInvite = ref(INVITE_CEREMONY);
+const selectedInviteParams = computed(() => inviteParams[selectedInvite.value]);
 const selectedInviteComponent = computed(
   () => inviteComponents[`Invite${selectedInvite.value}`]
 );
@@ -28,23 +65,31 @@ const selectInvite = (invite) => (selectedInvite.value = invite);
 <template>
   <section>
     <div class="font-agonia text-center text-xl">Дорогие друзья</div>
-    <div class="py-6 w-2/3 text-center mx-auto text-lg">
+    <div class="py-6 w-2/3 text-center mx-auto">
       Приглашаем разделить с нами радость особенного для нас события и стать
       свидетелями начала нашей семейной жизни!
     </div>
     <div class="text-center text-lg">Ждем Вас</div>
 
-    <div class="mx-auto flex justify-center gap-x-10 py-3">
-      <TheButton
+    <div
+      class="mx-auto flex justify-center items-center gap-x-10 py-2 sticky bg-[#faf8f5] z-10 -top-1"
+    >
+      <MyButton
         v-for="(button, index) in buttons"
         :key="index"
-        @click="selectInvite(button.invite)"
         :class="{ 'bg-primary-hover': button.invite === selectedInvite }"
-        >{{ button.label }}</TheButton
+        class="m-0"
+        @click="selectInvite(button.invite)"
+        >{{ button.label }}</MyButton
       >
     </div>
     <div class="px-4">
-      <component :is="selectedInviteComponent"> </component>
+      <keep-alive>
+        <component
+          :is="selectedInviteComponent"
+          v-bind="selectedInviteParams"
+        />
+      </keep-alive>
     </div>
   </section>
 </template>

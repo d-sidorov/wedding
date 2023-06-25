@@ -1,3 +1,7 @@
+<script setup>
+import MyHr from "./UI/Hr.vue";
+</script>
+
 <template>
   <section class="flex-col items-center">
     <div class="flex justify-center text-3xl py-3">09/09/2023</div>
@@ -8,9 +12,7 @@
     <div class="text-center text-2xl font-pl font-trajan pt-3">
       Дмитрий и Ксения
     </div>
-    <div class="text-center font-agonia py-3 text-xl">
-      приглашают на свадьбу
-    </div>
+    <div class="text-center font-agonia py-3 px-1">приглашают на свадьбу</div>
     <div class="flex justify-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -27,9 +29,7 @@
       </svg>
     </div>
 
-    <div class="items-center mx-auto w-20 mt-20">
-      <hr />
-    </div>
+    <MyHr class="mt-20" />
   </section>
 </template>
 

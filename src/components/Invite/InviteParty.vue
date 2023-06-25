@@ -1,4 +1,10 @@
-<script setup></script>
+<script setup>
+import InviteInfo from "./InviteInfo.vue";
+</script>
 
-<template>Party</template>
+<template>
+  <div class="flex flex-col items-center">
+    <InviteInfo v-bind="$attrs" />
+  </div>
+</template>
 <style></style>

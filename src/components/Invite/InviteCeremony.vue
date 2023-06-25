@@ -4,7 +4,7 @@ import InviteInfo from "./InviteInfo.vue";
 
 <template>
   <div class="flex flex-col items-center">
-    <InviteInfo />
+    <InviteInfo v-bind="$attrs" />
   </div>
 </template>
 <style></style>
