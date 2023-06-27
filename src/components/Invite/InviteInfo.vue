@@ -1,4 +1,5 @@
 <script setup>
+import MyDivider from "../UI/Divider.vue";
 const props = defineProps([
   "date",
   "location",
@@ -18,7 +19,7 @@ const props = defineProps([
     :src="image"
     class="rounded-full w-52 h-52 md:w-80 md:h-80 mt-3 bordered border-primary-hover border-8"
   />
-  <img src="flowers.png" class="h-40 rotate-45 my-3 object-fill" />
+  <MyDivider />
   <p class="font-agonia text-xl py-3">Как добраться</p>
   <p class="text-center py-3">
     Для вашего удобства мы подготовили карту. Надеемся, что Вы легко найдете
@@ -32,7 +33,7 @@ const props = defineProps([
       frameborder="0"
     ></iframe>
   </div>
-  <img src="flowers.png" class="h-40 rotate-45 my-3" />
+  <MyDivider class="my-2" />
   <p class="font-agonia text-xl mb-12">Дресс-код</p>
   <div class="flex items-center justify-center gap-x-5">
     <div

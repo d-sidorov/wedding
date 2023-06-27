@@ -34,7 +34,7 @@ calcTime();
 
 <template>
   <section class="flex justify-center px-4 relative">
-    <img src="timer_background.png" class="h-60 mr-6" />
+    <img src="timer_background.png" class="h-60 mr-6 opacity-70" />
     <div
       class="absolute text-center flex flex-col top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full"
     >
@@ -42,7 +42,7 @@ calcTime();
       <p class="text-xl">до свадьбы осталось</p>
       <div class="mt-3 text-2xl flex justify-center gap-x-5">
         <div
-          class="flex flex-col min-w-[55px]"
+          class="flex flex-col min-w-[60px]"
           v-for="(date, key) in dates"
           :key="key"
         >

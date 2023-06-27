@@ -69,7 +69,7 @@ const selectInvite = (invite) => (selectedInvite.value = invite);
       Приглашаем разделить с нами радость особенного для нас события и стать
       свидетелями начала нашей семейной жизни!
     </div>
-    <div class="text-center text-lg">Ждем Вас</div>
+    <div class="text-center text-lg mb-2">Ждем Вас</div>
 
     <div
       class="mx-auto flex justify-center items-center gap-x-10 py-2 sticky bg-[#faf8f5] z-10 -top-1"
@@ -77,8 +77,11 @@ const selectInvite = (invite) => (selectedInvite.value = invite);
       <MyButton
         v-for="(button, index) in buttons"
         :key="index"
-        :class="{ 'bg-primary-hover': button.invite === selectedInvite }"
-        class="m-0"
+        :class="{
+          'bg-primary-hover': button.invite === selectedInvite,
+          'animate-pulse': button.invite !== selectedInvite,
+        }"
+        class="m-0 bg-primary"
         @click="selectInvite(button.invite)"
         >{{ button.label }}</MyButton
       >
