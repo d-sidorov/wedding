@@ -2,15 +2,30 @@
 import { ref, reactive, computed, toRaw } from "vue";
 import QuizPage from "./QuizPage.vue";
 import MyButton from "../UI/Button.vue";
+import MyModal from "../UI/Modal.vue";
 import quizConfigs from "./configs";
+import Api from "../../api";
 
+// Form
 const form = reactive({
   presence: null,
   event: null,
   beverages: [],
   overnight_stay: null,
+  name: "test",
 });
+const getAnswer = (question) => {
+  const answer = form[question.value];
+  return Array.isArray(answer) ? answer.join(", ") : answer;
+};
+const onSubmit = async () => {
+  try {
+    const res = await Api.mutate(toRaw(form));
+    console.log(res);
+  } catch (err) {}
+};
 
+// Quiz
 const currentPage = ref(0);
 const maxPage = Object.keys(quizConfigs).length;
 
@@ -26,14 +41,8 @@ const isDisabledNextBtn = computed(() => {
   return !result;
 });
 
-const getAnswer = (question) => {
-  const answer = form[question.value];
-  return Array.isArray(answer) ? answer.join(", ") : answer;
-};
-
-const onSubmit = () => {
-  console.log(toRaw(form));
-};
+// Modal
+const isOpenModal = ref(false);
 </script>
 
 <template>
@@ -94,6 +103,9 @@ const onSubmit = () => {
       </div>
     </div>
   </section>
+
+  <MyButton @click="isOpenModal = true"> Открыть</MyButton>
+  <MyModal v-model="isOpenModal" />
 </template>
 
 <style scoped></style>
