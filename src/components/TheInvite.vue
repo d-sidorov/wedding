@@ -3,6 +3,11 @@ import MyButton from "./UI/Button.vue";
 import InviteCeremony from "./Invite/InviteCeremony.vue";
 import InviteParty from "./Invite/InviteParty.vue";
 import { ref, computed } from "vue";
+import useGetGuestNameFromRouter from "../helpers/useGetGuestNameFromRouter";
+import { useRoute } from "vue-router";
+
+const guest = useGetGuestNameFromRouter();
+const guestName = guest ?? "Дорогие друзья";
 
 const INVITE_CEREMONY = "Ceremony";
 const INVITE_PARTY = "Party";
@@ -64,7 +69,7 @@ const selectInvite = (invite) => (selectedInvite.value = invite);
 
 <template>
   <section>
-    <div class="font-agonia text-center text-xl">Дорогие друзья</div>
+    <div class="font-agonia text-center text-xl">{{ guestName }}</div>
     <div class="py-6 w-2/3 text-center mx-auto">
       Приглашаем разделить с нами радость особенного для нас события и стать
       свидетелями начала нашей семейной жизни!

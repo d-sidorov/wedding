@@ -5,6 +5,10 @@ import MyButton from "../UI/Button.vue";
 import MyModal from "../UI/Modal.vue";
 import quizConfigs from "./configs";
 import Api from "../../api";
+import useGetGuestNameFromRouter from "../../helpers/useGetGuestNameFromRouter";
+
+const guest = useGetGuestNameFromRouter();
+const guestName = guest ?? null;
 
 // Form
 const form = reactive({
@@ -12,7 +16,7 @@ const form = reactive({
   event: null,
   beverages: [],
   overnight_stay: null,
-  name: "test",
+  name: guestName,
 });
 const getAnswer = (question) => {
   const answer = form[question.value];
@@ -103,9 +107,6 @@ const isOpenModal = ref(false);
       </div>
     </div>
   </section>
-
-  <MyButton @click="isOpenModal = true"> Открыть</MyButton>
-  <MyModal v-model="isOpenModal" />
 </template>
 
 <style scoped></style>

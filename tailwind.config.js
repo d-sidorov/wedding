@@ -15,7 +15,6 @@ export default {
       },
     },
     colors: {
-      ...colors,
       white: "#fff",
       primary: "#e3dfd6",
       "primary-hover": "#d1c8b3",
