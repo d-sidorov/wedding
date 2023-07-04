@@ -1,7 +1,7 @@
 <template>
   <router-view></router-view>
   <main
-    class="min-h-screen bg-milk-white container mx-auto flex flex-col gap-y-14 pt-6 pb-6"
+    class="min-h-screen bg-milk-white container mx-auto flex flex-col gap-y-14 pt-6 pb-6 items-center"
   >
     <TheHeader />
 
@@ -9,7 +9,9 @@
 
     <MyHr />
 
-    <section class="px-8 font-agonia text-center leading-8 text-lg">
+    <section
+      class="px-8 font-agonia text-center leading-8 text-lg md:text-2xl md:w-3/4 md:leading-10"
+    >
       Мы с нетерпением ждем самого счастливого дня в нашей жизни!
     </section>
 

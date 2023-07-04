@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-const colors = require("tailwindcss/colors");
 
 export default {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
@@ -16,9 +15,9 @@ export default {
     },
     colors: {
       white: "#fff",
-      primary: "#e3dfd6",
-      "primary-hover": "#d1c8b3",
-      "primary-disabled": "#e9dfac63",
+      "my-primary": "#e3dfd6",
+      "my-primary-hover": "#d1c8b3",
+      "my-primary-disabled": "#e9dfac63",
       border: "#b8a988",
       "border-focus": "#94825b",
     },

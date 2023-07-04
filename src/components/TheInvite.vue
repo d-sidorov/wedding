@@ -31,11 +31,11 @@ const inviteParams = {
     image: "zags.jpg",
     dresses: [
       {
-        image: "man.png",
+        image: "/man.png",
         text: "Мужчины: Классические костюмы",
       },
       {
-        image: "woman.png",
+        image: "/woman.png",
         text: "Девушки: Вечерние наряды",
       },
     ],
@@ -48,11 +48,11 @@ const inviteParams = {
     image: "house.jpg",
     dresses: [
       {
-        image: "free_style.png",
+        image: "/free_style.png",
         text: "Свободный стиль одежды",
       },
       {
-        image: "bath.png",
+        image: "/bath.png",
         text: "Банные принадлежности",
       },
     ],
@@ -69,34 +69,38 @@ const selectInvite = (invite) => (selectedInvite.value = invite);
 
 <template>
   <section>
-    <div class="font-agonia text-center text-xl">{{ guestName }}</div>
-    <div class="py-6 w-2/3 text-center mx-auto">
+    <div class="font-agonia text-center text-xl md:text-3xl">
+      {{ guestName }}
+    </div>
+    <div class="py-6 w-2/3 text-center mx-auto md:text-2xl">
       Приглашаем разделить с нами радость особенного для нас события и стать
       свидетелями начала нашей семейной жизни!
     </div>
-    <div class="text-center text-lg mb-2">Ждем Вас</div>
+    <div class="text-center text-lg mb-2 md:text-2xl">Ждем Вас</div>
 
     <div
-      class="mx-auto flex justify-center items-center gap-x-10 py-2 sticky bg-[#faf8f5] z-10 -top-1"
+      class="mx-auto flex justify-center items-center gap-x-10 md:gap-x-16 py-2 md:py-4 sticky bg-[#faf8f5] z-10 -top-1"
     >
       <MyButton
         v-for="(button, index) in buttons"
         :key="index"
         :class="{
-          'bg-primary-hover': button.invite === selectedInvite,
-          'animate-pulse': button.invite !== selectedInvite,
+          'bg-my-primary-hover': button.invite === selectedInvite,
+          pulse: button.invite !== selectedInvite,
         }"
-        class="m-0 bg-primary"
+        class="m-0 bg-my-primary md:text-xl"
         @click="selectInvite(button.invite)"
         >{{ button.label }}</MyButton
       >
     </div>
     <div class="px-4">
       <keep-alive>
-        <component
-          :is="selectedInviteComponent"
-          v-bind="selectedInviteParams"
-        />
+        <Transition name="slide" mode="out-in">
+          <component
+            :is="selectedInviteComponent"
+            v-bind="selectedInviteParams"
+          />
+        </Transition>
       </keep-alive>
     </div>
   </section>

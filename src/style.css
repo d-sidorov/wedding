@@ -1,6 +1,4 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @font-face {
     font-family: "Agonia";
@@ -28,5 +26,38 @@
         font-family: Futura, system-ui, sans-serif;
         font-size: 1.3em;
         background-color: #faf8f5;
+    }
+}
+
+@tailwind components;
+@tailwind utilities;
+
+.slide-enter-active,
+.slide-leave-active {
+    transition: all 0.2s ease-out;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+    /* position: absolute; */
+    opacity: 0;
+}
+.slide-enter-from {
+    transform: translateX(-200px);
+}
+.slide-leave-to {
+    transform: translateX(200px);
+}
+
+.pulse {
+    animation: pulse 1500ms infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: #c9b791 0 0 0 0;
+    }
+    75% {
+        box-shadow: #f0ece600 0 0 0 10px;
     }
 }

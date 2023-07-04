@@ -17,7 +17,7 @@ const value = computed({
 <template>
   <input
     type="checkbox"
-    class="rounded text-primary-hover bg-gray-200 border-border outline-none outline-offset-8 shadow-none"
+    class="rounded text-my-primary-hover bg-gray-200 border-border outline-none outline-offset-8 shadow-none"
     v-model="value"
   />
 </template>

@@ -14,13 +14,13 @@ const components = {
 </script>
 
 <template>
-  <div class="flex flex-col items-start gap-y-2">
+  <div class="flex flex-col items-start gap-y-2 md:text-lg">
     {{ page.title }}
     <div v-for="answer in page.answers" :key="answer.value">
-      <label class="flex items-center gap-x-2">
+      <label class="flex items-center gap-x-2 md:gap-x-4">
         <component
           :is="components[page.type]"
-          :value="answer.title"
+          :value="answer.value"
           v-model="modelValue[page.value]"
         />
         {{ answer.title }}

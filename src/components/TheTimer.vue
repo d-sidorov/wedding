@@ -34,20 +34,25 @@ calcTime();
 
 <template>
   <section class="flex justify-center px-4 relative">
-    <img src="timer_background.png" class="h-60 mr-6 opacity-70" />
+    <img
+      src="/timer_background.png"
+      class="h-60 mr-6 opacity-70 md:h-[390px]"
+    />
     <div
       class="absolute text-center flex flex-col top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full"
     >
-      <p class="font-agonia text-lg mb-2">9 сентября 2023</p>
-      <p class="text-xl">до свадьбы осталось</p>
-      <div class="mt-3 text-2xl flex justify-center gap-x-5">
+      <p class="font-agonia text-lg mb-2 md:mb-4 md:text-2xl">
+        9 сентября 2023
+      </p>
+      <p class="text-xl md:text-2xl">до свадьбы осталось</p>
+      <div class="mt-3 md:mt-4 text-3xl flex justify-center gap-x-5 md:gap-x-8">
         <div
-          class="flex flex-col min-w-[60px]"
+          class="flex flex-col min-w-[65px] md:gap-y-4"
           v-for="(date, key) in dates"
           :key="key"
         >
-          <span class="font-agonia">{{ date }}</span>
-          <span class="text-sm">{{ key }}</span>
+          <span class="font-agonia md:text-5xl">{{ date }}</span>
+          <span class="text-sm md:text-xl">{{ key }}</span>
         </div>
       </div>
     </div>
