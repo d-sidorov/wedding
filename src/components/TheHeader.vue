@@ -30,8 +30,6 @@ import MyHr from "./UI/Hr.vue";
         />
       </svg>
     </div>
-
-    <MyHr class="mt-20" />
   </section>
 </template>
 

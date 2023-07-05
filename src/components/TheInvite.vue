@@ -69,7 +69,7 @@ const selectInvite = (invite) => (selectedInvite.value = invite);
 
 <template>
   <section>
-    <div class="font-agonia text-center text-xl md:text-3xl">
+    <div class="font-agonia text-center text-xl md:text-3xl md:mb-8">
       {{ guestName }}
     </div>
     <div class="py-6 w-2/3 text-center mx-auto md:text-2xl">
