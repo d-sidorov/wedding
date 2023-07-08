@@ -3,7 +3,11 @@
 @font-face {
     font-family: "Agonia";
     font-style: normal;
-    src: local("Agonia"), url(./assets/fonts/AgoniaLyubviRegular.woff) format("truetype");
+    src: local("Agonia"), url("./assets/fonts/AgoniaLyubviRegular.woff2") format("woff2"),
+        url("./assets/fonts/AgoniaLyubviRegular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: "Futura";
@@ -16,8 +20,11 @@
 }
 @font-face {
     font-family: "Playfair";
+    src: url("./assets/fonts/PlayfairDisplaySC-Regular.woff2") format("woff2"),
+        url("./assets/fonts/PlayfairDisplaySC-Regular.woff") format("woff");
+    font-weight: normal;
     font-style: normal;
-    src: local("Playfair"), url(./assets/fonts/Playfair.ttf) format("truetype");
+    font-display: swap;
 }
 @font-face {
     font-family: "Trajan";
@@ -31,10 +38,6 @@
         font-size: 1.3em;
         background-color: #faf8f5;
         overflow-x: hidden;
-    }
-
-    body {
-        /* overflow-x: hidden; */
     }
 }
 * {
