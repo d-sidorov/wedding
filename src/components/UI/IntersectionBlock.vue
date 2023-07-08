@@ -24,7 +24,7 @@ const { stop } = useIntersectionObserver(
 <template>
   <div
     ref="target"
-    class="IntersectionBlock flex justify-center items-center"
+    class="IntersectionBlock flex justify-center items-center z-10"
     :class="{ isVisible, withTranslate }"
   >
     <slot />

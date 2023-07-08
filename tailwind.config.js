@@ -21,6 +21,10 @@ export default {
       border: "#b8a988",
       "border-focus": "#94825b",
     },
+    backgroundImage: {
+      "border-image": "url('/images/border.png')",
+      "border-image2": "url('/images/border2.png')",
+    },
   },
   plugins: [require("@tailwindcss/forms")],
 };

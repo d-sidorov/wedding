@@ -7,8 +7,12 @@
 }
 @font-face {
     font-family: "Futura";
+    src: url("./assets/fonts/FuturaLightC.eot");
+    src: url("./assets/fonts/FuturaLightC.eot?#iefix") format("embedded-opentype"),
+        url("./assets/fonts/FuturaLightC.woff") format("woff"),
+        url("./assets/fonts/FuturaLightC.ttf") format("truetype");
+    font-weight: normal;
     font-style: normal;
-    src: local("Futura"), url(./assets/fonts/Futura.woff) format("truetype");
 }
 @font-face {
     font-family: "Playfair";
@@ -26,11 +30,16 @@
         font-family: Futura, system-ui, sans-serif;
         font-size: 1.3em;
         background-color: #faf8f5;
+        overflow-x: hidden;
+    }
+
+    body {
+        /* overflow-x: hidden; */
     }
 }
-
-@tailwind components;
-@tailwind utilities;
+* {
+    -webkit-tap-highlight-color: transparent;
+}
 
 .slide-enter-active,
 .slide-leave-active {
@@ -49,11 +58,11 @@
     transform: translateX(200px);
 }
 
-.pulse {
-    animation: pulse 1500ms infinite;
+.shadow-pulse {
+    animation: shadow-pulse 1500ms infinite;
 }
 
-@keyframes pulse {
+@keyframes shadow-pulse {
     0% {
         box-shadow: #c9b791 0 0 0 0;
     }
@@ -61,3 +70,6 @@
         box-shadow: #f0ece600 0 0 0 10px;
     }
 }
+
+@tailwind components;
+@tailwind utilities;

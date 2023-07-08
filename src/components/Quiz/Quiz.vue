@@ -103,7 +103,7 @@ const isDisabledNextBtn = computed(() => {
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
-        class="w-6 h-6 md:w-10 md:h-10"
+        class="w-8 h-8 md:w-10 md:h-10 animate-pulse"
       >
         <path
           stroke-linecap="round"

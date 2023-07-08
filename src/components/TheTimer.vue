@@ -1,7 +1,7 @@
 <script setup>
 import { ref, reactive } from "vue";
-const targetDate = new Date("2023-09-09:15:30:00");
 
+const targetDate = new Date("2023-09-09T15:30:00");
 const days = ref("");
 const hours = ref("");
 const minutes = ref("");
@@ -35,7 +35,7 @@ calcTime();
 <template>
   <section class="flex justify-center px-4 relative">
     <img
-      src="/timer_background.png"
+      src="/images/timer_background.png"
       class="h-60 mr-6 opacity-70 md:h-[390px]"
     />
     <div
@@ -45,9 +45,9 @@ calcTime();
         9 сентября 2023
       </p>
       <p class="text-xl md:text-2xl">до свадьбы осталось</p>
-      <div class="mt-3 md:mt-4 text-3xl flex justify-center gap-x-5 md:gap-x-8">
+      <div class="mt-3 md:mt-4 text-3xl flex justify-center gap-x-3 md:gap-x-8">
         <div
-          class="flex flex-col min-w-[65px] md:gap-y-4"
+          class="flex flex-col min-w-[75px] md:gap-y-4"
           v-for="(date, key) in dates"
           :key="key"
         >

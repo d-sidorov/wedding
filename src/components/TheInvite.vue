@@ -28,14 +28,14 @@ const inviteParams = {
     location: "ЗАГС (янтарный зал)",
     address: "ул. Малыгина, 85",
     mapId: "3A458c79962881e561cd5ed875fc22df0af7309a62f85e06d75ea075aee2477c02",
-    image: "zags.jpg",
+    image: "/images/zags.jpg",
     dresses: [
       {
-        image: "/man.png",
+        image: "/images/man.png",
         text: "Мужчины: Классические костюмы",
       },
       {
-        image: "/woman.png",
+        image: "/images/woman.png",
         text: "Девушки: Вечерние наряды",
       },
     ],
@@ -45,14 +45,14 @@ const inviteParams = {
     location: "Zima&Leto Park",
     address: "д. Падерина. ул. Хвойная, 10",
     mapId: "3A85adfee5d679e26a77587f1f93013f663c5bcbd44db5b3e852e2fcbaaeff7b79",
-    image: "house.jpg",
+    image: "/images/house.jpg",
     dresses: [
       {
-        image: "/free_style.png",
+        image: "/images/free_style.png",
         text: "Свободный стиль одежды",
       },
       {
-        image: "/bath.png",
+        image: "/images/bath.png",
         text: "Банные принадлежности",
       },
     ],
@@ -68,40 +68,38 @@ const selectInvite = (invite) => (selectedInvite.value = invite);
 </script>
 
 <template>
-  <section>
-    <div class="font-agonia text-center text-xl md:text-3xl md:mb-8">
+  <section class="px-4">
+    <div class="font-agonia text-center text-xl md:text-3xl md:mb-8 mt-6">
       {{ guestName }}
     </div>
-    <div class="py-6 w-2/3 text-center mx-auto md:text-2xl">
+    <div class="py-6 text-center mx-auto md:text-2xl md:w-2/3">
       Приглашаем разделить с нами радость особенного для нас события и стать
       свидетелями начала нашей семейной жизни!
     </div>
     <div class="text-center text-lg mb-2 md:text-2xl">Ждем Вас</div>
 
     <div
-      class="mx-auto flex justify-center items-center gap-x-10 md:gap-x-16 py-2 md:py-4 sticky bg-[#faf8f5] z-10 -top-1"
+      class="mx-auto flex justify-center items-center gap-x-10 md:gap-x-16 py-2 md:py-4 sticky bg-[#faf8f5] z-50 -top-1"
     >
       <MyButton
         v-for="(button, index) in buttons"
         :key="index"
         :class="{
           'bg-my-primary-hover': button.invite === selectedInvite,
-          pulse: button.invite !== selectedInvite,
+          'shadow-pulse': button.invite !== selectedInvite,
         }"
         class="m-0 bg-my-primary md:text-xl"
         @click="selectInvite(button.invite)"
         >{{ button.label }}</MyButton
       >
     </div>
-    <div class="px-4">
-      <keep-alive>
-        <Transition name="slide" mode="out-in">
-          <component
-            :is="selectedInviteComponent"
-            v-bind="selectedInviteParams"
-          />
-        </Transition>
-      </keep-alive>
-    </div>
+    <keep-alive>
+      <Transition name="slide" mode="out-in">
+        <component
+          :is="selectedInviteComponent"
+          v-bind="selectedInviteParams"
+        />
+      </Transition>
+    </keep-alive>
   </section>
 </template>

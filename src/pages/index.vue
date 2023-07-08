@@ -21,7 +21,7 @@
 
     <IntersectionBlock withTranslate>
       <section
-        class="px-8 font-agonia text-center leading-8 text-lg md:text-2xl md:w-3/4 md:leading-10"
+        class="px-4 font-agonia text-center text-lg md:text-2xl mb-1 md:w-3/4 leading-10"
       >
         Мы с нетерпением ждем самого счастливого дня в нашей жизни!
       </section>
