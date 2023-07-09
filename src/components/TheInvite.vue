@@ -69,9 +69,11 @@ const selectInvite = (invite) => (selectedInvite.value = invite);
 
 <template>
   <section class="px-4">
-    <div class="font-agonia text-center text-xl md:text-3xl md:mb-8 mt-6">
-      {{ guestName }}
-    </div>
+    <div
+      class="font-agonia text-center text-xl md:text-3xl md:mb-8 mt-6 leading-[30px]"
+      v-html="guestName"
+      style="line-height: 2em"
+    ></div>
     <div class="py-6 text-center mx-auto md:text-2xl md:w-2/3">
       Приглашаем разделить с нами радость особенного для нас события и стать
       свидетелями начала нашей семейной жизни!

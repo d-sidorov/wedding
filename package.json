@@ -12,7 +12,6 @@
     "@vueuse/components": "^10.2.1",
     "@vueuse/core": "^10.2.1",
     "firebase": "^9.23.0",
-    "flowbite": "^1.6.6",
     "vue": "^3.2.47",
     "vue-router": "^4.2.2",
     "vuefire": "^3.1.0"

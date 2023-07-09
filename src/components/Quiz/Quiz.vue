@@ -151,7 +151,9 @@ const isDisabledNextBtn = computed(() => {
             </MyButton>
           </div>
           <div class="justify-self-end" v-else>
-            <MyButton @click="onSubmit"> Отправить </MyButton>
+            <MyButton @click="onSubmit" :loading="isLoading">
+              Отправить
+            </MyButton>
           </div>
         </div>
       </template>

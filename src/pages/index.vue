@@ -7,16 +7,16 @@
       <TheHeader />
     </IntersectionBlock>
 
-    <IntersectionBlock>
-      <MyHr class="md:my-10" />
+    <IntersectionBlock class="md:mt-10">
+      <MyHr />
     </IntersectionBlock>
 
     <IntersectionBlock withTranslate>
       <TheInvite />
     </IntersectionBlock>
 
-    <IntersectionBlock withTranslate>
-      <MyHr class="md:my-10" />
+    <IntersectionBlock withTranslate class="md:my-10">
+      <MyHr />
     </IntersectionBlock>
 
     <IntersectionBlock withTranslate>
@@ -27,8 +27,8 @@
       </section>
     </IntersectionBlock>
 
-    <IntersectionBlock withTranslate>
-      <MyHr class="md:my-10" />
+    <IntersectionBlock withTranslate class="md:my-10">
+      <MyHr />
     </IntersectionBlock>
 
     <IntersectionBlock withTranslate>

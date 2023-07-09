@@ -5,7 +5,7 @@ export default [
     type: "radio",
     answers: [
       {
-        title: "Да, приду. Буду один",
+        title: "Да, приду. Буду один (одна)",
         value: "yes_alone",
       },
       {

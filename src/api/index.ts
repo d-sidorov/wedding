@@ -24,7 +24,14 @@ class Api {
     try {
       const newInput = {};
       for (let key in input) {
-        newInput[key] = this.getAnswer(key, input[key]);
+        if (key === "name") {
+          let name = input[key]
+            .replace("<br/>", " ")
+            .split(" ")
+            .slice(1)
+            .join(" ");
+          newInput[key] = name;
+        } else newInput[key] = this.getAnswer(key, input[key]);
       }
 
       const res = await addDoc(collection(this._db, this._table), newInput);
