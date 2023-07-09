@@ -70,7 +70,7 @@ const selectInvite = (invite) => (selectedInvite.value = invite);
 <template>
   <section class="px-4">
     <div
-      class="font-agonia text-center text-xl md:text-3xl md:mb-8 mt-6 leading-[30px]"
+      class="font-agonia text-center text-lg md:text-3xl md:mb-8 mt-3 leading-[30px]"
       v-html="guestName"
       style="line-height: 2em"
     ></div>
