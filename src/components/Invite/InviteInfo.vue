@@ -3,6 +3,7 @@ import MyDivider from "../UI/Divider.vue";
 import IntersectionBlock from "../UI/IntersectionBlock.vue";
 const props = defineProps([
   "date",
+  "time",
   "location",
   "address",
   "mapId",
@@ -14,6 +15,7 @@ const props = defineProps([
 
 <template>
   <p class="font-agonia text-xl md:text-2xl py-3 md:py-5">{{ props.date }}</p>
+  <p class="font-agonia text-2xl md:text-4xl py-3 md:py-5">{{ props.time }}</p>
   <p class="mt-3 text-lg md:text-2xl">{{ props.location }}</p>
   <p class="text-lg md:text-2xl">{{ props.address }}</p>
   <div

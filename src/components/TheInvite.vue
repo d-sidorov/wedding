@@ -25,6 +25,7 @@ const buttons = [
 const inviteParams = {
   [INVITE_CEREMONY]: {
     date: "9 сентября 2023",
+    time: "15:30",
     location: "ЗАГС (янтарный зал)",
     address: "ул. Малыгина, 85",
     mapId: "3A458c79962881e561cd5ed875fc22df0af7309a62f85e06d75ea075aee2477c02",
@@ -42,6 +43,7 @@ const inviteParams = {
   },
   [INVITE_PARTY]: {
     date: "11 сентября 2023",
+    time: "17:00",
     location: "Zima&Leto Park",
     address: "д. Падерина. ул. Хвойная, 10",
     mapId: "3A85adfee5d679e26a77587f1f93013f663c5bcbd44db5b3e852e2fcbaaeff7b79",
@@ -64,7 +66,13 @@ const selectedInviteParams = computed(() => inviteParams[selectedInvite.value]);
 const selectedInviteComponent = computed(
   () => inviteComponents[`Invite${selectedInvite.value}`]
 );
-const selectInvite = (invite) => (selectedInvite.value = invite);
+
+const target = ref(null);
+const selectInvite = (invite) => {
+  console.log(target);
+  selectedInvite.value = invite;
+  target.value.scrollIntoView({ behavior: "smooth" });
+};
 </script>
 
 <template>
@@ -80,6 +88,7 @@ const selectInvite = (invite) => (selectedInvite.value = invite);
     </div>
     <div class="text-center text-lg mb-2 md:text-2xl">Ждем Вас</div>
 
+    <div ref="target"></div>
     <div
       class="mx-auto flex justify-center items-center gap-x-10 md:gap-x-16 py-2 md:py-4 sticky bg-[#faf8f5] z-50 -top-1"
     >
