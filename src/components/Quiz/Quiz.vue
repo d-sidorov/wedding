@@ -65,7 +65,7 @@ const changePage = (step) => {
     prevPage.value = currentPage.value;
     currentPage.value = maxPage;
     for (let key in form) {
-      if (key === questionValue) continue;
+      if (key === questionValue || key === "name") continue;
       if (Array.isArray(form[key])) form[key] = [];
       else form[key] = null;
     }
