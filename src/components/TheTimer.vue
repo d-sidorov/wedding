@@ -1,7 +1,7 @@
 <script setup>
 import { ref, reactive } from "vue";
 
-const targetDate = new Date("2023-09-09T15:30:00");
+const targetDate = new Date("2023-11-09T15:30:00");
 const days = ref("");
 const hours = ref("");
 const minutes = ref("");
